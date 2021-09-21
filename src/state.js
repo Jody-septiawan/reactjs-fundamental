@@ -15,9 +15,9 @@ function State() {
     return setCounter(counter - 1);
   }
 
-  function Greeting() {
+  const Greeting = () => {
     setGreeting('Halo batch 26');
-  }
+  };
 
   return (
     // Code Inside div
