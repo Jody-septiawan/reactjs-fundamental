@@ -1,24 +1,14 @@
 import React, { useState } from 'react';
 
-//Create Component PrivatePage
-function PrivatePage(props) {
-  return (
-    <div>
-      <h1>Welcome</h1>
-      <button onClick={props.logout}>Logout</button>
-    </div>
-  );
-}
+// Pages
+import GuestPage from './pages/GuestPage';
+import PrivatePage from './pages/PrivatePage';
 
-//Create Component GuestPage
-function GuestPage(props) {
-  return (
-    <div>
-      <h1>Please sign in</h1>
-      <button onClick={props.login}>Login</button>
-    </div>
-  );
-}
+// Components
+import Navbar from './components/Navbar';
+
+// Image
+import Img from './assets/img.jpg';
 
 function ConditionRenderin() {
   //init State
@@ -35,6 +25,8 @@ function ConditionRenderin() {
     // Code Inside div
     <div>
       {/* conditional logic rendering */}
+      <Navbar />
+      <img src={Img} alt="" style={{ width: '230px' }} />
       {isLoggedin ? (
         <PrivatePage logout={() => setIsLoggedin(!isLoggedin)} />
       ) : (
